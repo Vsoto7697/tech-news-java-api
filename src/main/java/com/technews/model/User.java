@@ -43,17 +43,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(Integer id, String username, String email, String password, boolean loggedIn, List<Post> posts, List<Vote> votes, List<Comment> comments) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.loggedIn = loggedIn;
-        this.posts = posts;
-        this.votes = votes;
-        this.comments = comments;
-    }
-
 
     public Integer getId() {
         return id;
@@ -122,7 +111,8 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User user)) return false;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
         return isLoggedIn() == user.isLoggedIn() &&
                 Objects.equals(getId(), user.getId()) &&
                 Objects.equals(getUsername(), user.getUsername()) &&

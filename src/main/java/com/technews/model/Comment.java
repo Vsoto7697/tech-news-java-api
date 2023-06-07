@@ -18,14 +18,16 @@ public class Comment implements Serializable {
     private Integer userId;
     private Integer postId;
 
-    public Comment() {
-    }
 
     public Comment(Integer id, String commentText, Integer userId, Integer postId) {
         this.id = id;
         this.commentText = commentText;
         this.userId = userId;
         this.postId = postId;
+    }
+
+    public Comment() {
+
     }
 
     public Integer getId() {
